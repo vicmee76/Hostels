@@ -1,4 +1,6 @@
+using Hostels.Interfaces;
 using Hostels.Models;
+using Hostels.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +32,8 @@ namespace Hostels
             services.AddControllers();
 
             services.AddDbContext<HostelContext>(x => x.UseSqlServer(Configuration.GetConnectionString("HostelConnectionString")));
+
+            services.AddScoped<IRoles, IRolesService>();
         }
 
 
