@@ -18,10 +18,18 @@ namespace Hostels.Services
         public async Task<string> DeleteRole(int roleId)
         {
             var get = GetRoleById(roleId);
-            _context.Roles.Remove(get.FirstOrDefault());
-            if (await _context.SaveChangesAsync() > 0)
-                return "Role removed";
-            return "Something went wrong, role was not removed";
+
+            if (get.Any())
+            {
+                _context.Roles.Remove(get.FirstOrDefault());
+                if (await _context.SaveChangesAsync() > 0)
+                    return "Role removed";
+                return "Something went wrong, role was not removed";
+            }
+            else
+            {
+                return "Role was not found";
+            }
         }
 
 

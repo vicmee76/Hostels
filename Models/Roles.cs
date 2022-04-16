@@ -13,7 +13,7 @@ namespace Hostels.Models
 
         [Required]
         [MaxLength(10)]
-        public int RoleName { get; set; }
+        public string RoleName { get; set; }
 
         public ICollection<Users> Users { get; set; }
     }
