@@ -15,7 +15,6 @@ namespace Hostels.Models
         }
 
         public DbSet<Users> Users { get; set; }
-
-        public DbSet<Hostels.Models.Roles> Roles { get; set; }
+        public DbSet<Roles> Roles { get; set; }
     }
 }
