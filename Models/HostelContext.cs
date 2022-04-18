@@ -9,7 +9,7 @@ namespace Hostels.Models
 {
     public class HostelContext : DbContext
     {
-        public HostelContext(DbContextOptions<HostelContext> Options) : base(Options)
+        public HostelContext(DbContextOptions<HostelContext> options) : base(options)
         {
 
         }
