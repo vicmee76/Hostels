@@ -12,7 +12,7 @@ namespace Hostels.Models
         public int RoleId { get; set; }
 
         [Required]
-        [MaxLength(10)]
+        [MaxLength(10, ErrorMessage = "Rolename should not be more than 10" )]
         public string RoleName { get; set; }
 
         public ICollection<Users> Users { get; set; }
